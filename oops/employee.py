@@ -31,13 +31,16 @@ class Employee():
         return self.emp_id
     def get_name(self):
         return self.name
+    
+    def get_salary(self):     
+        return self.__salary
+    
     def __is_valid_increment(self, amount):
         return amount > 0
     def increase_salary(self, amount):
         if self.__is_valid_increment(amount):
             self.__salary += amount
             print(f"Salary increased by: {amount}")
-            print(f'Salry: {self.__salary}')
             print("Salary Updated Successfully")
         else:
             print("Invalid Increment Amount")
@@ -46,7 +49,10 @@ class Employee():
 employee = Employee(1001, "Rahul", 45000)
 print('EmployeeID: ',employee.get_emp_id())
 print('Employee Name: ',employee.get_name())
-
+print("Employee Salary:", employee.get_salary())
 employee.increase_salary(5000)
+print("Updated Salary:", employee.get_salary())
 employee.increase_salary(-500)
 print('Annual Salary:', employee.calculate_annual_salary())
+
+

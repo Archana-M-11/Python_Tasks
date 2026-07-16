@@ -1,3 +1,4 @@
+
 '''Create a class named Employee.
 Define a constructor (__init__) that initializes the following attributes:
 emp_id
@@ -46,15 +47,20 @@ class Employee():
             print("Invalid Increment Amount")
     def calculate_annual_salary(self):
         return self.__salary * 12
-employee = Employee(1001, "Rahul", 45000)
-print('EmployeeID: ',employee.get_emp_id())
-print('Employee Name: ',employee.get_name())
-print("Employee Salary:", employee.get_salary())
-employee.increase_salary(5000)
-print("Updated Salary:", employee.get_salary())
-employee.increase_salary(-500)
-print('Annual Salary:', employee.calculate_annual_salary())
+class Manager(Employee):
+    def __init__(self,emp_id, name, salary, department):
+        super().__init__(emp_id,name,salary)
+        self.department=department
+    def display_manager_details(self):
+        print("Employee ID:", self.get_emp_id())
+        print("Employee Name:", self.get_name())
+        print("Department:", self.department)
+        print("Salary:", self.get_salary())
 
 
-
-
+manager = Manager(1001, "Rahul", 45000, "Sales")
+manager.display_manager_details()
+print('Annual Salry:',manager.calculate_annual_salary())
+manager.increase_salary(5000)
+print("Updated Salary:", manager.get_salary())
+manager.increase_salary(-500)

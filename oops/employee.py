@@ -13,22 +13,40 @@ Name: Rahul
 Salary: 45000
 Use the getter methods to display the employee details
 add method calculate_anual_salary() that returns the employee's annual salary.
+employee class il salary variable private aakku
+ then Create a private method __is_valid_increment(amount),return True if the increment is greater than 0; otherwise return False.
+ create an object and call method to
+ Displaying employee details
+Increasing the salary
+Displaying the updated salary
+Attempting an invalid salary increment ( example, -500) and displaying an appropriate message
+ 
  '''
 class Employee():
     def __init__(self,emp_id,name,salary):
         self.emp_id=emp_id
         self.name=name
-        self.salary=salary
+        self.__salary=salary
     def get_emp_id(self):
         return self.emp_id
     def get_name(self):
         return self.name
-    def get_salary(self):
-        return self.salary
-    def calculate_anual_salary(self):
-        return self.salary*12
+    def __is_valid_increment(self, amount):
+        return amount > 0
+    def increase_salary(self, amount):
+        if self.__is_valid_increment(amount):
+            self.__salary += amount
+            print(f"Salary increased by: {amount}")
+            print(f'Salry: {self.__salary}')
+            print("Salary Updated Successfully")
+        else:
+            print("Invalid Increment Amount")
+    def calculate_annual_salary(self):
+        return self.__salary * 12
 employee = Employee(1001, "Rahul", 45000)
 print('EmployeeID: ',employee.get_emp_id())
 print('Employee Name: ',employee.get_name())
-print('Employee Salary: ',employee.get_salary())
-print('Employee Annual Salary: ',employee.calculate_anual_salary())
+
+employee.increase_salary(5000)
+employee.increase_salary(-500)
+print('Annual Salary:', employee.calculate_annual_salary())

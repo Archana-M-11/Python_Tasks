@@ -21,7 +21,9 @@ employee class il salary variable private aakku
 Increasing the salary
 Displaying the updated salary
 Attempting an invalid salary increment ( example, -500) and displaying an appropriate message
- 
+ Override the calculate_annual_salary() method in the Manager class.
+ Assume a manager receives an annual bonus equal to 2 months' salary.
+ Calculate manager's annual salary and display details
  '''
 class Employee():
     def __init__(self,emp_id,name,salary):
@@ -57,6 +59,8 @@ class Manager(Employee):
         print("Employee Name:", self.get_name())
         print("Department:", self.department)
         print("Salary:", self.get_salary())
+    def calculate_annual_salary(self):
+        return self.get_salary() * 14
 
 
 manager = Manager(1001, "Rahul", 45000, "Sales")

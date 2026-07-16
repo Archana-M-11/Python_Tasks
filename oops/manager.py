@@ -47,6 +47,7 @@ class Employee():
             print("Invalid Increment Amount")
     def calculate_annual_salary(self):
         return self.__salary * 12
+    
 class Manager(Employee):
     def __init__(self,emp_id, name, salary, department):
         super().__init__(emp_id,name,salary)
@@ -60,7 +61,7 @@ class Manager(Employee):
 
 manager = Manager(1001, "Rahul", 45000, "Sales")
 manager.display_manager_details()
-print('Annual Salry:',manager.calculate_annual_salary())
+print('Annual Salary:',manager.calculate_annual_salary())
 manager.increase_salary(5000)
-print("Updated Salary:", manager.get_salary())
+print('Updated Salary:', manager.get_salary())
 manager.increase_salary(-500)

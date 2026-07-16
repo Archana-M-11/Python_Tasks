@@ -8,7 +8,7 @@ __iter__() to return the iterator object.
 __next__() to return one transaction at a time.
 '''
 class  TransactionIterator():
-    def __init__(self,trasactions):
+    def __init__(self,transactions):
         self.transactions=transactions
         self.index=0
     def __iter__(self):

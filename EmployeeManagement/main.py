@@ -4,24 +4,15 @@ from oops_package.manager import Manager
 from oops_package.permenantEmployee import PermanentEmployee
 from oops_package.contractEmployee import ContractEmployee
 
-
-
 department = Department("D101", "Sales")
 project = Project("P101", "Banking System")
-
-
-
 manager = Manager(1001, "Rahul", 45000, department)
 print(manager)
-
 manager.workOnProject(project)
 print("Annual Salary:", manager.calculate_annual_salary())
-
 manager.increase_salary(5000)
 print("Updated Salary:", manager.get_salary())
-
 manager.increase_salary(-500)
-
 print("Bonus:", manager.calculate_bonus())
 print("Manager Salary (Basic + Bonus):", manager.calculateSalary())
 manager2 = Manager(1003, "Anu", 60000, department)

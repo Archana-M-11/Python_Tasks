@@ -1,4 +1,19 @@
 class Employee:
+    
+    def __str__(self):
+        return (
+            f"Employee ID: {self.emp_id}\n"
+            f"Employee Name: {self.name}\n"
+            f"Department ID: {self.department.get_dept_id()}\n"
+            f"Department Name: {self.department.get_dept_name()}\n"
+            f"Salary: {self.__salary}"
+        )
+    def __eq__(self,other):
+        return self.emp_id==other.emp_id
+    def __lt__(self, other):
+        return self.get_salary() < other.get_salary()
+    def __gt__(self, other):
+        return self.get_salary() > other.get_salary()
 
     def __init__(self, emp_id, name, salary, department):
         self.emp_id = emp_id

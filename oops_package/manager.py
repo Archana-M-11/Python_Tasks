@@ -1,7 +1,7 @@
 from .employee import Employee
+from .bonus import Bonus
 
-
-class Manager(Employee):
+class Manager(Employee,Bonus):
 
     def __init__(self, emp_id, name, salary, department):
         super().__init__(emp_id, name, salary, department)

@@ -1,4 +1,5 @@
-class Employee:
+from abc import ABC, abstractmethod
+class Employee(ABC):
     
     def __str__(self):
         return (
@@ -50,3 +51,7 @@ class Employee:
     def workOnProject(self, project):
         print(f"{self.get_name()} is working on:")
         project.displayProjectDetails()
+    
+    @abstractmethod
+    def calculateSalary(self):
+        pass

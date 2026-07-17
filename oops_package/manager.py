@@ -16,4 +16,7 @@ class Manager(Employee,Bonus):
 
     def calculate_annual_salary(self):
         return self.get_salary() * 14
+    def calculateSalary(self):
+        return self.get_salary() + self.calculate_bonus()
+    
     

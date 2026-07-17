@@ -31,3 +31,7 @@ class Employee:
 
     def calculate_annual_salary(self):
         return self.__salary * 12
+    
+    def workOnProject(self, project):
+        print(f"{self.get_name()} is working on:")
+        project.displayProjectDetails()
